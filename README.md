@@ -77,4 +77,8 @@ icacls '.\node_modules\electron\dist' /grant '*S-1-15-2-1:(OI)(CI)(RX)' /T /Q
 - [审查报告](docs/REVIEW.md)：修复及验证结果。
 - [素材来源](assets/ARTWORK.md) 与 [使用权说明](ASSET_RIGHTS.md)。
 
-本仓库未授予统一开源许可证。角色、GIF 和音频权利归原权利人，公开可访问不代表取得商业使用或再分发许可，复用前应取得相应授权。
+## 开源与贡献
+
+原创代码和项目文档采用 [MIT 许可证](LICENSE)，欢迎任何开发者自由使用、修改、分发、商业使用或开发自己的版本。欢迎通过 Issue 提出建议，或 Fork 仓库提交 Pull Request；开发流程见 [开发指南](docs/DEVELOPMENT.md)。
+
+MIT 授权不覆盖第三方角色、图片、GIF、音频及其衍生素材。这些权利归原权利人，复用或分发前应取得相应授权；也可以替换成自己的形象和声音。

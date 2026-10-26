@@ -40,5 +40,10 @@
       "target": "dir",
       "signAndEditExecutable": false
     }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WoAiXueXiHa/naiwa-pet.git"
   }
 }
