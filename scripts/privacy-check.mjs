@@ -10,7 +10,7 @@ for (const file of files) {
     findings.push([file, "oversize"]);
   if (/(^|\/)(auth\.json|settings\.json|\.env|credentials[^/]*)$/.test(file))
     findings.push([file, "private-file"]);
-  if (!/\.(ts|mjs|json|md|py|html|css)$/.test(file)) continue;
+  if (!/\.(ts|mjs|json|md|py|ps1|html|css)$/.test(file)) continue;
   const value = readFileSync(file, "utf8");
   if (
     /(?:gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{30,}|sk-[A-Za-z0-9_-]{24,})/.test(

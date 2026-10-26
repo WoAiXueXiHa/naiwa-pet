@@ -1,6 +1,7 @@
 param(
     [string]$PetExecutable = '',
-    [ValidateRange(1, 60)][int]$PollSeconds = 3
+    [ValidateRange(1, 60)][int]$PollSeconds = 3,
+    [switch]$CheckOnce
 )
 
 $ErrorActionPreference = 'Stop'
@@ -13,19 +14,30 @@ if (-not (Test-Path -LiteralPath $PetExecutable -PathType Leaf)) {
     throw 'Pet executable not found. Run npm run pack first, or supply -PetExecutable.'
 }
 $PetExecutable = (Resolve-Path -LiteralPath $PetExecutable).Path
+function Get-CodexDesktopSession {
+    # Store distribution uses ChatGPT.exe; bin/codex.exe is only its backend.
+    $desktop = Get-Process -Name ChatGPT, Codex -ErrorAction SilentlyContinue | Where-Object {
+        $_.Path -like '*\WindowsApps\OpenAI.Codex_*\app\ChatGPT.exe' -or
+        $_.Path -like '*\OpenAI\Codex\app\ChatGPT.exe' -or
+        ($_.Path -like '*\Codex\Codex.exe' -and $_.Path -notlike '*\bin\*')
+    } | Sort-Object StartTime | Select-Object -First 1
+    if ($desktop) { return [string]$desktop.Id + ':' + $desktop.StartTime.Ticks }
+    return ''
+}
+if ($CheckOnce) {
+    [pscustomobject]@{DesktopDetected = [bool](Get-CodexDesktopSession); PetExecutableExists = $true}
+    return
+}
 $mutex = New-Object System.Threading.Mutex($false, 'Local\NaiwaCodexStartupWatcher')
 $acquired = $false
 try {
     try { $acquired = $mutex.WaitOne(0) }
     catch [System.Threading.AbandonedMutexException] { $acquired = $true }
     if (-not $acquired) { return }
-    $wasRunning = $false
+    $lastSession = ''
     while ($true) {
-        # Match the desktop app, not the separately installed CLI app-server.
-        $running = [bool](Get-Process -Name codex -ErrorAction SilentlyContinue | Where-Object {
-            $_.Path -like '*\OpenAI\Codex\bin\*\codex.exe'
-        } | Select-Object -First 1)
-        if ($running -and -not $wasRunning) {
+        $session = Get-CodexDesktopSession
+        if ($session -and $session -ne $lastSession) {
             $existing = Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $PetExecutable }
             if (-not $existing) {
                 try {
@@ -37,7 +49,7 @@ try {
                 }
             }
         }
-        $wasRunning = $running
+        $lastSession = $session
         Start-Sleep -Seconds $PollSeconds
     }
 } finally {

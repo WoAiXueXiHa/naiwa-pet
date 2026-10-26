@@ -38,9 +38,9 @@ npm.cmd start
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-codex-startup.ps1
 ```
 
-安装会创建登录启动快捷方式并立即启动隐藏监测脚本。检测到 Codex 桌面应用打开后约 3 秒启动奶蛙，互斥锁避免重复监测，已有奶蛙进程时不会重复打开。关闭 Codex 不会关闭奶蛙；手动退出奶蛙后，在下次检测到 Codex 重新打开时再次启动。
+安装会创建当前用户的 Windows 计划任务并立即启动隐藏监测脚本；任务由 Windows 管理，在登录时启动，退出异常后最多自动重试三次。检测到 Codex 桌面应用打开后约 3 秒启动奶蛙，互斥锁避免重复监测，已有奶蛙进程时不会重复打开。关闭 Codex 不会关闭奶蛙；手动退出奶蛙后，在下次检测到 Codex 重新打开时再次启动。
 
-脚本根据所在仓库定位便携版，不包含开发者个人路径。移动仓库后需重新执行安装命令。当前检测适用于安装在 OpenAI/Codex/bin 下的 Codex 桌面版，独立 CLI 不触发；其它发行路径需要调整脚本中的匹配条件。极短的退出重开可能被轮询漏过。
+脚本根据所在仓库定位便携版，不包含开发者个人路径。移动仓库后需重新执行安装命令。检测支持 Windows Store 的 OpenAI.Codex 包（进程名实际为 ChatGPT.exe）及脚本列出的桌面安装路径，不使用 bin 下的 CLI 后台进程作为触发依据。通过进程 ID 与启动时间识别新会话；其它发行路径需调整匹配条件。运行安装脚本的账号需要有创建自身计划任务的权限。
 
 卸载联动启动：
 
@@ -48,7 +48,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-codex-
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-codex-startup.ps1 -Uninstall
 ```
 
-卸载仅删除本脚本创建的快捷方式，不删除其它启动项；当前监测进程在注销 Windows 后结束。执行策略参数只针对此次脚本进程，不修改系统策略。
+卸载会停止并删除本脚本创建的计划任务，同时清理旧版本 Naiwa-Codex 快捷方式，不删除其它启动项或关闭奶蛙。执行策略参数只针对此次脚本进程，不修改系统策略。
 
 ## 额度与提醒
 
