@@ -6,35 +6,7 @@ import { EventEmitter } from "node:events";
 
 // Resolve a native executable, avoiding shell interpretation and token-file access.
 export function findCodex(env: NodeJS.ProcessEnv = process.env): string {
-  const dirs = [
-    join(env.APPDATA || "", "npm", "node_modules", "@openai", "codex"),
-    join(env.LOCALAPPDATA || "", "Programs", "codex"),
-  ];
-  for (const root of dirs) {
-    const vendor = join(
-      root,
-      "vendor",
-      "x86_64-pc-windows-msvc",
-      "codex",
-      "codex.exe",
-    );
-    if (existsSync(vendor)) return vendor;
-    const optional = join(root, "node_modules", "@openai");
-    if (existsSync(optional))
-      for (const pkg of readdirSync(optional)) {
-        const exe = join(
-          optional,
-          pkg,
-          "vendor",
-          "x86_64-pc-windows-msvc",
-          "codex",
-          "codex.exe",
-        );
-        if (existsSync(exe)) return exe;
-      }
-  }
-  // A scheduled task does not inherit the desktop app's injected PATH.
-  // Discover the bundled native CLI without copying login state or pinning a build hash.
+  // Only the desktop client installation is an allowed service source.
   if (env.LOCALAPPDATA) {
     const bin = join(env.LOCALAPPDATA, "OpenAI", "Codex", "bin");
     try {
@@ -44,16 +16,10 @@ export function findCodex(env: NodeJS.ProcessEnv = process.env): string {
         .sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs);
       if (candidates.length) return candidates[0];
     } catch {
-      /* Other installation forms are checked below. */
+      /* Do not fall back to a separately installed CLI. */
     }
   }
-  for (const dir of (env.PATH || "").split(";").filter(Boolean)) {
-    const p = join(dir, "codex.exe");
-    if (existsSync(p)) return p;
-  }
-  throw new Error(
-    "未找到 Codex CLI。请先安装 Codex CLI 并使用 ChatGPT 账号登录。",
-  );
+  throw new Error("未找到 Codex 客户端服务，请安装或更新 Codex 客户端后重试。");
 }
 export class CodexClient extends EventEmitter {
   constructor(
@@ -193,10 +159,6 @@ export class CodexClient extends EventEmitter {
   async read() {
     await this.start();
     return this.request("account/rateLimits/read");
-  }
-  async login() {
-    await this.start();
-    return this.request("account/login/start", { type: "chatgpt" });
   }
   stop() {
     this.stopping = true;

@@ -4,7 +4,6 @@ contextBridge.exposeInMainWorld("naiwa", {
   snapshot: () => ipcRenderer.invoke("snapshot"),
   settings: (p: any) => ipcRenderer.invoke("settings", p),
   refresh: () => ipcRenderer.invoke("refresh"),
-  login: () => ipcRenderer.invoke("login"),
   send: (name: string, data: any) => {
     if (
       [

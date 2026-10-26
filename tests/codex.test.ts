@@ -75,3 +75,28 @@ test("scheduled-task environment resolves bundled Codex without injected PATH", 
     rmSync(root, { recursive: true, force: true });
   }
 });
+
+test("separate CLI installations and PATH executables are never selected", () => {
+  const root = mkdtempSync(join(tmpdir(), "naiwa-client-only-"));
+  try {
+    const standalone = join(
+      root,
+      "npm",
+      "node_modules",
+      "@openai",
+      "codex",
+      "vendor",
+      "x86_64-pc-windows-msvc",
+      "codex",
+    );
+    mkdirSync(standalone, { recursive: true });
+    writeFileSync(join(standalone, "codex.exe"), "fixture");
+    writeFileSync(join(root, "codex.exe"), "fixture");
+    assert.throws(
+      () => findCodex({ LOCALAPPDATA: root, APPDATA: root, PATH: root }),
+      /客户端/,
+    );
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});

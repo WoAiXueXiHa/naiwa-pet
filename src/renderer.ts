@@ -63,8 +63,8 @@ async function boot() {
 function renderPanel() {
   const q = state.quota,
     s = state.settings;
-  const quotaHTML = `<section class="card"><div class="account"><i class="dot ${q.connected ? "" : "off"}"></i><span>${escape(q.account)}</span></div><p class="muted">当前连接的 Codex CLI 账号 · 请与 Codex 桌面账号核对</p>${q.error ? `<div class="error">${escape(q.error)}${q.updatedAt ? "<br>下方保留上次读取结果。" : ""}</div>` : ""}${q.windows.length ? q.windows.map((w) => `<div class="quota-row"><div class="quota-line"><span>${escape(w.name)}</span><strong>${w.remaining === null ? "—" : Math.round(w.remaining) + "<small>%</small>"}</strong></div><div class="meter ${(w.remaining ?? 100) <= 20 ? "low" : ""}"><i style="width:${w.remaining ?? 0}%"></i></div><div class="meta"><span>${w.durationMins ? escape(duration(w.durationMins)) : "窗口时长未知"} · 剩余</span><span>${time(w.resetsAt)} 重置</span></div></div>`).join("") : '<p class="welcome">连接后，这里会显示各个额度窗口的剩余比例和重置时间。</p>'}</section>
-    <section class="card"><h2>安静地帮你留意</h2><p class="muted">每天 09:00—23:00，每 30 分钟检查。剩余 20%、10%、5% 时各提醒一次，跨档合并、不重复打扰。时间均为北京时间。</p><div class="actions"><button class="primary" id="refresh">刷新额度</button><button id="login">登录 Codex</button></div><p class="muted" id="login-note"></p></section><div class="foot">${q.updatedAt ? "上次更新 " + time(q.updatedAt) : "尚无额度数据"} · ${q.connected ? "已连接" : "未连接"}</div>`;
+  const quotaHTML = `<section class="card"><div class="account"><i class="dot ${q.connected ? "" : "off"}"></i><span>${escape(q.account)}</span></div><p class="muted">来源：Codex 客户端 · 当前账号</p>${q.error ? `<div class="error">${escape(q.error)}${q.updatedAt ? "<br>下方保留上次读取结果。" : ""}</div>` : ""}${q.windows.length ? q.windows.map((w) => `<div class="quota-row"><div class="quota-line"><span>${escape(w.name)}</span><strong>${w.remaining === null ? "—" : Math.round(w.remaining) + "<small>%</small>"}</strong></div><div class="meter ${(w.remaining ?? 100) <= 20 ? "low" : ""}"><i style="width:${w.remaining ?? 0}%"></i></div><div class="meta"><span>${w.durationMins ? escape(duration(w.durationMins)) : "窗口时长未知"} · 剩余</span><span>${time(w.resetsAt)} 重置</span></div></div>`).join("") : '<p class="welcome">连接后，这里会显示各个额度窗口的剩余比例和重置时间。</p>'}</section>
+    <section class="card"><h2>安静地帮你留意</h2><p class="muted">每天 09:00—23:00，每 30 分钟检查。剩余 20%、10%、5% 时各提醒一次，跨档合并、不重复打扰。时间均为北京时间。</p><div class="actions"><button class="primary" id="refresh">刷新额度</button></div><p class="muted">请在 Codex 客户端完成登录或切换账号，再点击刷新额度。无需安装 CLI 或打开命令窗口。</p></section><div class="foot">${q.updatedAt ? "上次更新 " + time(q.updatedAt) : "尚无额度数据"} · ${q.connected ? "已连接" : "未连接"}</div>`;
   const toggle = (key: keyof Settings, title: string, description: string) =>
     `<label class="setting"><span><strong>${title}</strong><small>${description}</small></span><input type="checkbox" data-setting="${key}" ${s[key] ? "checked" : ""}></label>`;
   const settingsHTML = `<section class="card"><h2>你的奶蛙</h2>
@@ -136,24 +136,6 @@ function renderPanel() {
       } finally {
         renderPanel();
       }
-    };
-  const login = document.getElementById("login") as HTMLButtonElement | null;
-  if (login)
-    login.onclick = async () => {
-      login.disabled = true;
-      let r: { ok: boolean; error?: string };
-      try {
-        r = await api.login();
-      } catch {
-        r = { ok: false, error: "登录服务暂不可用，请重试。" };
-      } finally {
-        login.disabled = false;
-      }
-      const note = document.getElementById("login-note");
-      if (note)
-        note.textContent = r.ok
-          ? "请在浏览器完成 Codex 登录，完成后会自动刷新。"
-          : r.error || "登录失败";
     };
   document
     .getElementById("pause")

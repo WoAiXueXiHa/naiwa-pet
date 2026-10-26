@@ -60,7 +60,6 @@ export interface PetApi {
   snapshot(): Promise<Snapshot>;
   settings(patch: Partial<Settings>): Promise<Snapshot>;
   refresh(): Promise<Snapshot>;
-  login(): Promise<{ ok: boolean; error?: string }>;
   send(
     name:
       | "panel"

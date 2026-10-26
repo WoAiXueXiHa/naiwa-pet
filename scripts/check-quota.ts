@@ -4,7 +4,7 @@ import { normalizeQuota } from "../src/rules";
 const c = new CodexClient();
 try {
   findCodex();
-  console.log("Codex: 已找到本地程序");
+  console.log("Codex: 已找到客户端附带服务");
   const a = await c.account();
   console.log("Auth:", a.account?.type || "未登录");
   const r = await c.read();

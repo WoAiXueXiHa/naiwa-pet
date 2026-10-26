@@ -12,7 +12,6 @@ import {
   nativeImage,
   Notification,
   screen,
-  shell,
   powerMonitor,
 } from "electron";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -160,14 +159,17 @@ async function refresh(manual = false) {
     const mock =
       process.argv.includes("--smoke-test") &&
       !process.argv.includes("--live-quota");
+    if (!mock) codex.stop(); // Reload the client login state on every check.
     const { account } = mock
       ? { account: { type: "chatgpt", id: "qa-mock" } }
       : await codex.account();
     if (!account)
-      throw new Error("尚未登录 Codex，请在额度面板点击“登录 Codex”。");
+      throw new Error(
+        "尚未登录，请在 Codex 客户端中登录 ChatGPT 账号，再点击刷新额度。",
+      );
     if (account.type === "apiKey")
       throw new Error(
-        "当前为 API Key 登录。读取套餐额度需要使用 ChatGPT 账号登录 Codex。",
+        "客户端当前未使用 ChatGPT 套餐账号，请在 Codex 客户端中切换登录后刷新。",
       );
     const identity = createHash("sha256")
       .update(
@@ -489,27 +491,6 @@ else {
     ipc.handle("refresh", async () => {
       await refresh(true);
       return snapshot();
-    });
-    ipc.handle("login", async () => {
-      try {
-        const r = await codex.login();
-        if (r.authUrl) {
-          const u = new URL(r.authUrl);
-          if (
-            u.protocol === "https:" &&
-            (u.hostname === "auth.openai.com" ||
-              u.hostname.endsWith(".openai.com"))
-          )
-            await shell.openExternal(u.toString());
-          else throw new Error("登录地址未通过检查。");
-        }
-        return { ok: true };
-      } catch (e) {
-        return {
-          ok: false,
-          error: e instanceof Error ? redact(e.message) : "登录失败",
-        };
-      }
     });
     ipc.on("panel", (_e, view) =>
       openPanel(view === "settings" ? "settings" : "quota"),
