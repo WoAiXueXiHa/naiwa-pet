@@ -1,0 +1,2221 @@
+{
+  "width": 384,
+  "height": 448,
+  "animations": {
+    "idle": {
+      "frames": [
+        {
+          "file": "frames/idle/000.png",
+          "durationMs": 1000,
+          "eyes": [
+            [
+              0.4010416666666667,
+              0.08705357142857142,
+              0.4817708333333333,
+              0.15178571428571427
+            ]
+          ]
+        }
+      ],
+      "fps": 1,
+      "loop": true
+    },
+    "laugh": {
+      "frames": [
+        {
+          "file": "frames/laugh/000.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/001.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/002.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/003.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/004.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/005.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/006.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/007.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/008.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/009.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/010.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/011.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/012.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/013.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/014.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/015.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/016.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/017.png",
+          "durationMs": 61.342318772136956,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/018.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/019.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/020.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/021.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/022.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/023.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/024.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/025.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/026.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/027.png",
+          "durationMs": 61.342318772136956,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/028.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/029.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/030.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/031.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/032.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/033.png",
+          "durationMs": 61.342318772136956,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/034.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/035.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/036.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/037.png",
+          "durationMs": 33.03047933884298,
+          "eyes": [
+            [
+              0.4921875,
+              0.16964285714285715,
+              0.5598958333333334,
+              0.20982142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/038.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/039.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/040.png",
+          "durationMs": 33.03047933884298,
+          "eyes": [
+            [
+              0.53125,
+              0.13169642857142858,
+              0.6171875,
+              0.18526785714285715
+            ],
+            [
+              0.4348958333333333,
+              0.14732142857142858,
+              0.4869791666666667,
+              0.20758928571428573
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/041.png",
+          "durationMs": 61.342318772136956,
+          "eyes": [
+            [
+              0.5416666666666666,
+              0.12946428571428573,
+              0.625,
+              0.18080357142857142
+            ],
+            [
+              0.4427083333333333,
+              0.14955357142857142,
+              0.4947916666666667,
+              0.20535714285714285
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/042.png",
+          "durationMs": 33.03047933884298,
+          "eyes": [
+            [
+              0.53125,
+              0.11607142857142858,
+              0.6145833333333334,
+              0.16741071428571427
+            ],
+            [
+              0.4348958333333333,
+              0.13839285714285715,
+              0.484375,
+              0.18973214285714285
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/043.png",
+          "durationMs": 28.31183943329398,
+          "eyes": [
+            [
+              0.5260416666666666,
+              0.12946428571428573,
+              0.578125,
+              0.17857142857142858
+            ],
+            [
+              0.4244791666666667,
+              0.14955357142857142,
+              0.4739583333333333,
+              0.20089285714285715
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/044.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/045.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/046.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/047.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/048.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/049.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/050.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/051.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/052.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/053.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/054.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/055.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/056.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/057.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/058.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/059.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/060.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/061.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/062.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/063.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/064.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/065.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/066.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/067.png",
+          "durationMs": 61.342318772136956,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/068.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/069.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/070.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/071.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/072.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/073.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/074.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/075.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/076.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/077.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/078.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/079.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/080.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/081.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/082.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/083.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/084.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/085.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/086.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/087.png",
+          "durationMs": 66.06095867768596,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/088.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/089.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/090.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/091.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/092.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/093.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/094.png",
+          "durationMs": 61.342318772136956,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/095.png",
+          "durationMs": 33.03047933884298,
+          "eyes": [
+            [
+              0.4296875,
+              0.12946428571428573,
+              0.4869791666666667,
+              0.18080357142857142
+            ],
+            [
+              0.5390625,
+              0.13169642857142858,
+              0.5989583333333334,
+              0.18080357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/096.png",
+          "durationMs": 28.31183943329398,
+          "eyes": [
+            [
+              0.546875,
+              0.12723214285714285,
+              0.6276041666666666,
+              0.18973214285714285
+            ],
+            [
+              0.4375,
+              0.12053571428571429,
+              0.4973958333333333,
+              0.19196428571428573
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/097.png",
+          "durationMs": 33.03047933884298,
+          "eyes": [
+            [
+              0.5416666666666666,
+              0.13839285714285715,
+              0.6223958333333334,
+              0.20535714285714285
+            ],
+            [
+              0.4296875,
+              0.13169642857142858,
+              0.4921875,
+              0.18973214285714285
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/098.png",
+          "durationMs": 33.03047933884298,
+          "eyes": [
+            [
+              0.5260416666666666,
+              0.14285714285714285,
+              0.609375,
+              0.20982142857142858
+            ],
+            [
+              0.4114583333333333,
+              0.140625,
+              0.4765625,
+              0.21205357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/099.png",
+          "durationMs": 28.31183943329398,
+          "eyes": [
+            [
+              0.453125,
+              0.20982142857142858,
+              0.5442708333333334,
+              0.27232142857142855
+            ],
+            [
+              0.3463541666666667,
+              0.21205357142857142,
+              0.40625,
+              0.29464285714285715
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/100.png",
+          "durationMs": 66.06095867768596,
+          "eyes": [
+            [
+              0.4348958333333333,
+              0.22321428571428573,
+              0.5208333333333334,
+              0.2924107142857143
+            ],
+            [
+              0.3255208333333333,
+              0.23214285714285715,
+              0.3854166666666667,
+              0.3080357142857143
+            ]
+          ]
+        },
+        {
+          "file": "frames/laugh/101.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/102.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/103.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/104.png",
+          "durationMs": 61.342318772136956,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/105.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/106.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/107.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/108.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/109.png",
+          "durationMs": 28.31183943329398,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/110.png",
+          "durationMs": 33.03047933884298,
+          "eyes": []
+        },
+        {
+          "file": "frames/laugh/111.png",
+          "durationMs": 33.030479338842724,
+          "eyes": []
+        }
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "run-right": {
+      "frames": [
+        {
+          "file": "frames/run-right/000.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/001.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/002.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/003.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/004.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/005.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/006.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-right/007.png",
+          "durationMs": 90,
+          "eyes": []
+        }
+      ],
+      "fps": 11.11111111111111,
+      "loop": true
+    },
+    "run-left": {
+      "frames": [
+        {
+          "file": "frames/run-left/000.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/001.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/002.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/003.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/004.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/005.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/006.png",
+          "durationMs": 90,
+          "eyes": []
+        },
+        {
+          "file": "frames/run-left/007.png",
+          "durationMs": 90,
+          "eyes": []
+        }
+      ],
+      "fps": 11.11111111111111,
+      "loop": true
+    },
+    "stretch": {
+      "frames": [
+        {
+          "file": "frames/idle/000.png",
+          "durationMs": 1000,
+          "eyes": [
+            [
+              0.4010416666666667,
+              0.08705357142857142,
+              0.4817708333333333,
+              0.15178571428571427
+            ]
+          ]
+        }
+      ],
+      "fps": 1,
+      "loop": false
+    },
+    "glance": {
+      "frames": [
+        {
+          "file": "frames/glance/024.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4010416666666667,
+              0.08705357142857142,
+              0.4817708333333333,
+              0.15178571428571427
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/025.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4010416666666667,
+              0.08705357142857142,
+              0.4817708333333333,
+              0.15178571428571427
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/026.png",
+          "durationMs": 70,
+          "eyes": []
+        },
+        {
+          "file": "frames/glance/027.png",
+          "durationMs": 70,
+          "eyes": []
+        },
+        {
+          "file": "frames/glance/028.png",
+          "durationMs": 130,
+          "eyes": []
+        },
+        {
+          "file": "frames/glance/029.png",
+          "durationMs": 70,
+          "eyes": []
+        },
+        {
+          "file": "frames/glance/030.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4114583333333333,
+              0.09151785714285714,
+              0.4869791666666667,
+              0.14508928571428573
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/031.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4140625,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/032.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/033.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/034.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/035.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/036.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/037.png",
+          "durationMs": 140,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/038.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/039.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/040.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/041.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/042.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/043.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/044.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14732142857142858
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/045.png",
+          "durationMs": 140,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/046.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4166666666666667,
+              0.08258928571428571,
+              0.4947916666666667,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/047.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4192708333333333,
+              0.08258928571428571,
+              0.4973958333333333,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/048.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4192708333333333,
+              0.08482142857142858,
+              0.4973958333333333,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/049.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4192708333333333,
+              0.08482142857142858,
+              0.4973958333333333,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/050.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4192708333333333,
+              0.08482142857142858,
+              0.4973958333333333,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/051.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4192708333333333,
+              0.08482142857142858,
+              0.4973958333333333,
+              0.14955357142857142
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/052.png",
+          "durationMs": 60,
+          "eyes": [
+            [
+              0.4244791666666667,
+              0.08482142857142858,
+              0.5026041666666666,
+              0.15178571428571427
+            ]
+          ]
+        },
+        {
+          "file": "frames/glance/053.png",
+          "durationMs": 70,
+          "eyes": [
+            [
+              0.4401041666666667,
+              0.08928571428571429,
+              0.5182291666666666,
+              0.15625
+            ]
+          ]
+        }
+      ],
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "bridges": {
+    "idle:0>run-left": {
+      "frames": [
+        {
+          "file": "pose-bridges/idle_0--run-left/000.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--run-left/001.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--run-left/002.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--run-left/003.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--run-left/004.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--run-left/005.png",
+          "durationMs": 40.0,
+          "eyes": []
+        }
+      ],
+      "fps": 25.0,
+      "loop": false
+    },
+    "run-left:0>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/run-left_0--idle/000.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--idle/001.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--idle/002.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--idle/003.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--idle/004.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--idle/005.png",
+          "durationMs": 40.0,
+          "eyes": []
+        }
+      ],
+      "fps": 25.0,
+      "loop": false
+    },
+    "idle:0>turn": {
+      "frames": [
+        {
+          "file": "pose-bridges/idle_0--turn/000.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--turn/001.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--turn/002.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--turn/003.png",
+          "durationMs": 40.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--turn/004.png",
+          "durationMs": 40.0,
+          "eyes": []
+        }
+      ],
+      "fps": 25.0,
+      "loop": false
+    },
+    "run-left:0>turn": {
+      "frames": [
+        {
+          "file": "pose-bridges/run-left_0--turn/000.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/001.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/002.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/003.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/004.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/005.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/006.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/007.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/008.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/009.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/010.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/011.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/012.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/013.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/014.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/015.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/run-left_0--turn/016.png",
+          "durationMs": 30.58823529411765,
+          "eyes": []
+        }
+      ],
+      "fps": 32.69230769230769,
+      "loop": false
+    },
+    "laugh:111>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/laugh_111--idle/000.png",
+          "durationMs": 55.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/laugh_111--idle/001.png",
+          "durationMs": 55.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/laugh_111--idle/002.png",
+          "durationMs": 55.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/laugh_111--idle/003.png",
+          "durationMs": 55.0,
+          "eyes": []
+        }
+      ],
+      "fps": 18.181818181818183,
+      "loop": false
+    },
+    "idle:0>laugh": {
+      "frames": [
+        {
+          "file": "pose-bridges/idle_0--laugh/000.png",
+          "durationMs": 45.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--laugh/001.png",
+          "durationMs": 45.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--laugh/002.png",
+          "durationMs": 45.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--laugh/003.png",
+          "durationMs": 45.0,
+          "eyes": []
+        }
+      ],
+      "fps": 22.22222222222222,
+      "loop": false
+    },
+    "idle:0>glance": {
+      "frames": [
+        {
+          "file": "pose-bridges/idle_0--glance/000.png",
+          "durationMs": 25.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--glance/001.png",
+          "durationMs": 25.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--glance/002.png",
+          "durationMs": 25.0,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/idle_0--glance/003.png",
+          "durationMs": 25.0,
+          "eyes": []
+        }
+      ],
+      "fps": 40.0,
+      "loop": false
+    },
+    "glance:0>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_0--idle/000.png",
+          "durationMs": 23.333333333333332,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_0--idle/001.png",
+          "durationMs": 23.333333333333332,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_0--idle/002.png",
+          "durationMs": 23.333333333333332,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_0--idle/003.png",
+          "durationMs": 23.333333333333332,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_0--idle/004.png",
+          "durationMs": 23.333333333333332,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_0--idle/005.png",
+          "durationMs": 23.333333333333332,
+          "eyes": []
+        }
+      ],
+      "fps": 42.857142857142854,
+      "loop": false
+    },
+    "glance:5>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_5--idle/000.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/001.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/002.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/003.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/004.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/005.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/006.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/007.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/008.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/009.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_5--idle/010.png",
+          "durationMs": 15.548589341692791,
+          "eyes": []
+        }
+      ],
+      "fps": 64.31451612903226,
+      "loop": false
+    },
+    "glance:10>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_10--idle/000.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/001.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/002.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/003.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/004.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/005.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/006.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/007.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/008.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/009.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/010.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/011.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/012.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/013.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/014.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_10--idle/015.png",
+          "durationMs": 12.629310344827587,
+          "eyes": []
+        }
+      ],
+      "fps": 79.18088737201364,
+      "loop": false
+    },
+    "glance:15>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_15--idle/000.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/001.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/002.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/003.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/004.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/005.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/006.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/007.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/008.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/009.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/010.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/011.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/012.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/013.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/014.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/015.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/016.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/017.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/018.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/019.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_15--idle/020.png",
+          "durationMs": 11.10016420361248,
+          "eyes": []
+        }
+      ],
+      "fps": 90.08875739644971,
+      "loop": false
+    },
+    "glance:20>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_20--idle/000.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/001.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/002.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/003.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/004.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/005.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/006.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/007.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/008.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/009.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/010.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/011.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/012.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/013.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/014.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/015.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/016.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/017.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/018.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/019.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/020.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/021.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/022.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/023.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/024.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_20--idle/025.png",
+          "durationMs": 10.159151193633953,
+          "eyes": []
+        }
+      ],
+      "fps": 98.43342036553524,
+      "loop": false
+    },
+    "glance:25>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_25--idle/000.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/001.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/002.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/003.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/004.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/005.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/006.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/007.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/008.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/009.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/010.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/011.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/012.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/013.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/014.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/015.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/016.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/017.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/018.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/019.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/020.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/021.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/022.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/023.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/024.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/025.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/026.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/027.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/028.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/029.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_25--idle/030.png",
+          "durationMs": 9.521690767519468,
+          "eyes": []
+        }
+      ],
+      "fps": 105.02336448598129,
+      "loop": false
+    },
+    "glance:29>idle": {
+      "frames": [
+        {
+          "file": "pose-bridges/glance_29--idle/000.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/001.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/002.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/003.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/004.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/005.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/006.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/007.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/008.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/009.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/010.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/011.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/012.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/013.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/014.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/015.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/016.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/017.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/018.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/019.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/020.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/021.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/022.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/023.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/024.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/025.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/026.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/027.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/028.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/029.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/030.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/031.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/032.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/033.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        },
+        {
+          "file": "pose-bridges/glance_29--idle/034.png",
+          "durationMs": 9.142857142857142,
+          "eyes": []
+        }
+      ],
+      "fps": 109.375,
+      "loop": false
+    }
+  }
+}

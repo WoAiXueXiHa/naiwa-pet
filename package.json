@@ -1,0 +1,44 @@
+{
+  "name": "naiwa-desktop",
+  "version": "1.1.1",
+  "private": true,
+  "type": "module",
+  "description": "奶蛙 Windows 互动桌宠与 Codex 额度提醒",
+  "main": "dist/main.cjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "npm run build && electron .",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "quota:check": "node --import tsx scripts/check-quota.ts",
+    "pack": "npm run build && electron-builder --win dir --x64",
+    "preview": "node scripts/preview.mjs",
+    "test:package": "node scripts/test-package.mjs",
+    "privacy:check": "node scripts/privacy-check.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "build": {
+    "appId": "local.naiwa.desktop",
+    "productName": "奶蛙桌宠",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "dir",
+      "signAndEditExecutable": false
+    }
+  }
+}

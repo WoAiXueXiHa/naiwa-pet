@@ -1,0 +1,17 @@
+node_modules/
+dist/
+release/
+artifacts/
+*.log
+*.tmp
+*.corrupt-*
+.env
+.env.*
+!.env.example
+settings.json
+auth.json
+credentials*
+.cache/
+__pycache__/
+*.pyc
+qa/
