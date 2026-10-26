@@ -8,6 +8,12 @@ declare global {
 const api = window.naiwa;
 const root = document.getElementById("app")!;
 const panelMode = new URLSearchParams(location.search).get("panel");
+if (panelMode) document.body.className = "panel";
+function showFailure() {
+  root.innerHTML =
+    '<section style="padding:24px"><h2>界面暂时无法加载</h2><p>请重新加载。若仍有问题，请退出托盘中的奶蛙后重新启动。</p><button id="retry-load">重新加载</button></section>';
+  document.getElementById("retry-load")!.onclick = () => location.reload();
+}
 let currentView = panelMode || "quota",
   state: Snapshot;
 let editingRange = false;
@@ -123,15 +129,26 @@ function renderPanel() {
     refresh.onclick = async () => {
       refresh.disabled = true;
       refresh.textContent = "正在读取…";
-      state = await api.refresh();
-      renderPanel();
+      try {
+        state = await api.refresh();
+      } catch {
+        state.quota.error = "刷新失败，请检查连接后重试。";
+      } finally {
+        renderPanel();
+      }
     };
   const login = document.getElementById("login") as HTMLButtonElement | null;
   if (login)
     login.onclick = async () => {
       login.disabled = true;
-      const r = await api.login();
-      login.disabled = false;
+      let r: { ok: boolean; error?: string };
+      try {
+        r = await api.login();
+      } catch {
+        r = { ok: false, error: "登录服务暂不可用，请重试。" };
+      } finally {
+        login.disabled = false;
+      }
       const note = document.getElementById("login-note");
       if (note)
         note.textContent = r.ok
@@ -173,6 +190,10 @@ function updateBadge() {
 async function bootPet() {
   await mountPet(root, api, () => state, updateBadge);
 }
-boot().catch((e) => {
-  root.textContent = "奶蛙启动失败：" + String(e);
+window.addEventListener("error", () => {
+  if (panelMode) showFailure();
 });
+window.addEventListener("unhandledrejection", () => {
+  if (panelMode) showFailure();
+});
+boot().catch(showFailure);

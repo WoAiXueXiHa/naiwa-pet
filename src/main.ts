@@ -245,7 +245,7 @@ function resize() {
     Math.round(center - actual.width / 2),
     Math.round(foot - actual.height + 38),
   );
-  pet.setAlwaysOnTop(settings.alwaysOnTop, "floating");
+  pet.setAlwaysOnTop(settings.alwaysOnTop, "screen-saver");
   fitPosition();
   const p = pet.getPosition();
   settings.x = p[0];
@@ -309,7 +309,7 @@ function openPanel(view = "quota") {
     height: 720,
     minWidth: 540,
     minHeight: 560,
-    show: !process.argv.includes("--smoke-test"),
+    show: false,
     title: "奶蛙 · " + (view === "quota" ? "额度" : "设置"),
     backgroundColor: "#f7f8ef",
     autoHideMenuBar: true,
@@ -319,6 +319,13 @@ function openPanel(view = "quota") {
       nodeIntegration: false,
       sandbox: true,
     },
+  });
+  const openingPanel = panel;
+  openingPanel.once("ready-to-show", () => {
+    if (!process.argv.includes("--smoke-test")) openingPanel.show();
+  });
+  openingPanel.webContents.on("render-process-gone", () => {
+    if (!openingPanel.isDestroyed()) openingPanel.reload();
   });
   panel.loadFile(join(__dirname, "index.html"), { query: { panel: view } });
   panel.on("closed", () => (panel = null));
@@ -421,6 +428,7 @@ else {
         offscreen: process.argv.includes("--smoke-test"),
       },
     });
+    pet.setAlwaysOnTop(settings.alwaysOnTop, "screen-saver");
     pet.loadFile(join(__dirname, "index.html"));
     pet.once("ready-to-show", () => {
       fitPosition();

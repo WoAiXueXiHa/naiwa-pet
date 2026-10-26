@@ -5,7 +5,7 @@ const qa = resolve("artifacts/packaged");
 await mkdir(qa, { recursive: true });
 const child = spawn(
   resolve("release/win-unpacked/奶蛙桌宠.exe"),
-  ["--smoke-test"],
+  ["--smoke-test", ...process.argv.slice(2)],
   {
     windowsHide: true,
     stdio: "inherit",

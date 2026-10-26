@@ -55,3 +55,23 @@ test("timeout clears request and stop rejects remaining requests", async () => {
   await assert.rejects(pending);
   assert.equal(c.pending.size, 0);
 });
+
+import { findCodex } from "../src/codex";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+test("scheduled-task environment resolves bundled Codex without injected PATH", () => {
+  const root = mkdtempSync(join(tmpdir(), "naiwa-cli-"));
+  try {
+    const bin = join(root, "OpenAI", "Codex", "bin", "test-build");
+    mkdirSync(bin, { recursive: true });
+    const exe = join(bin, "codex.exe");
+    writeFileSync(exe, "fixture");
+    assert.equal(
+      findCodex({ LOCALAPPDATA: root, APPDATA: root, PATH: "" }),
+      exe,
+    );
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});

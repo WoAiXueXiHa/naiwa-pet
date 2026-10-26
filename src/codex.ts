@@ -1,14 +1,14 @@
 import { spawn, type ChildProcessWithoutNullStreams } from "node:child_process";
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { createInterface } from "node:readline";
 import { EventEmitter } from "node:events";
 
 // Resolve a native executable, avoiding shell interpretation and token-file access.
-export function findCodex(): string {
+export function findCodex(env: NodeJS.ProcessEnv = process.env): string {
   const dirs = [
-    join(process.env.APPDATA || "", "npm", "node_modules", "@openai", "codex"),
-    join(process.env.LOCALAPPDATA || "", "Programs", "codex"),
+    join(env.APPDATA || "", "npm", "node_modules", "@openai", "codex"),
+    join(env.LOCALAPPDATA || "", "Programs", "codex"),
   ];
   for (const root of dirs) {
     const vendor = join(
@@ -33,7 +33,21 @@ export function findCodex(): string {
         if (existsSync(exe)) return exe;
       }
   }
-  for (const dir of (process.env.PATH || "").split(";")) {
+  // A scheduled task does not inherit the desktop app's injected PATH.
+  // Discover the bundled native CLI without copying login state or pinning a build hash.
+  if (env.LOCALAPPDATA) {
+    const bin = join(env.LOCALAPPDATA, "OpenAI", "Codex", "bin");
+    try {
+      const candidates = readdirSync(bin)
+        .map((name) => join(bin, name, "codex.exe"))
+        .filter(existsSync)
+        .sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs);
+      if (candidates.length) return candidates[0];
+    } catch {
+      /* Other installation forms are checked below. */
+    }
+  }
+  for (const dir of (env.PATH || "").split(";").filter(Boolean)) {
     const p = join(dir, "codex.exe");
     if (existsSync(p)) return p;
   }
