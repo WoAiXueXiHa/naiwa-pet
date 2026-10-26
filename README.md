@@ -30,6 +30,26 @@ npm.cmd start
 
 默认高度 80 逻辑像素，范围 40—360；声音开启，音量 55%。已有用户设置优先。代码不自动安装开机启动，需要时自行创建指向完整便携版 exe 的启动快捷方式。
 
+## 随 Codex 自动启动
+
+先运行 `npm.cmd run pack`，再在项目目录安装当前 Windows 用户的联动启动：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-codex-startup.ps1
+```
+
+安装会创建登录启动快捷方式并立即启动隐藏监测脚本。检测到 Codex 桌面应用打开后约 3 秒启动奶蛙，互斥锁避免重复监测，已有奶蛙进程时不会重复打开。关闭 Codex 不会关闭奶蛙；手动退出奶蛙后，在下次检测到 Codex 重新打开时再次启动。
+
+脚本根据所在仓库定位便携版，不包含开发者个人路径。移动仓库后需重新执行安装命令。当前检测适用于安装在 OpenAI/Codex/bin 下的 Codex 桌面版，独立 CLI 不触发；其它发行路径需要调整脚本中的匹配条件。极短的退出重开可能被轮询漏过。
+
+卸载联动启动：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-codex-startup.ps1 -Uninstall
+```
+
+卸载仅删除本脚本创建的快捷方式，不删除其它启动项；当前监测进程在注销 Windows 后结束。执行策略参数只针对此次脚本进程，不修改系统策略。
+
 ## 额度与提醒
 
 程序启动本机 codex app-server 读取账号和套餐额度，不读取或复制认证文件，不需要 API Key。CLI 与桌面应用可能登录不同账号，请自行核对。
