@@ -4,6 +4,10 @@ export interface Bounds {
   width: number;
   height: number;
 }
+export function petWindowSize(size: number) {
+  // 210px bubble + 16px gap + 38px footer + 8px top padding.
+  return { width: Math.max(260, Math.round(size * 1.4)), height: size + 272 };
+}
 export function spriteVisible(
   bounds: Bounds,
   size: number,
@@ -25,8 +29,7 @@ export function spriteVisible(
   );
 }
 export function resizedBounds(old: Bounds, size: number): Bounds {
-  const width = Math.max(150, Math.round(size * 1.4)),
-    height = size + 100;
+  const { width, height } = petWindowSize(size);
   return {
     x: Math.round(old.x + old.width / 2 - width / 2),
     y: Math.round(old.y + old.height - height),

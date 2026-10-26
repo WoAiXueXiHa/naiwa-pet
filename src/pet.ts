@@ -429,6 +429,7 @@ export async function mountPet(
         : action;
     canvas.dataset.facing = facingRight ? "right" : "left";
     const settings = getState().settings;
+    root.style.setProperty("--pet-height", settings.size + "px");
     canvas.style.height = settings.size + "px";
     canvas.style.width =
       (settings.size * manifest.width) / manifest.height + "px";

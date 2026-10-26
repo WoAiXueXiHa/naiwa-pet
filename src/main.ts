@@ -1,5 +1,5 @@
 import { Scheduler } from "./scheduler";
-import { spriteVisible, resizedBounds } from "./windows";
+import { spriteVisible, resizedBounds, petWindowSize } from "./windows";
 import { loadState, saveState } from "./storage";
 import { redact, maskAccount } from "./privacy";
 import { registerIpc } from "./ipc";
@@ -232,13 +232,13 @@ function fitPosition() {
   );
 }
 function petWidth() {
-  return Math.max(150, Math.round(settings.size * 1.4));
+  return petWindowSize(settings.size).width;
 }
 function resize() {
   if (!pet) return;
   const old = pet.getBounds(),
     width = petWidth(),
-    height = settings.size + 100;
+    height = petWindowSize(settings.size).height;
   const center = old.x + old.width / 2,
     foot = old.y + old.height - 38;
   pet.setBounds(resizedBounds(old, settings.size));
@@ -411,9 +411,9 @@ else {
     const display = screen.getPrimaryDisplay().workArea;
     pet = new BrowserWindow({
       width: petWidth(),
-      height: settings.size + 100,
+      height: petWindowSize(settings.size).height,
       x: settings.x ?? display.x + display.width - petWidth() - 20,
-      y: settings.y ?? display.y + display.height - settings.size - 130,
+      y: settings.y ?? display.y + display.height - settings.size - 302,
       transparent: true,
       frame: false,
       resizable: false,
@@ -565,6 +565,36 @@ async function smokeTest() {
   const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
   const checks: { name: string; ok: boolean; detail?: any }[] = [];
   try {
+    const bubbleLayouts: any[] = [];
+    for (const size of [40, 80, 160, 360]) {
+      await pet!.webContents.executeJavaScript(
+        `window.naiwa.settings({size:${size}})`,
+      );
+      bubble("起来活动 5 分钟吧，伸伸腿、看看远处。", "break");
+      await wait(120);
+      bubbleLayouts.push(
+        await pet!.webContents.executeJavaScript(
+          `(()=>{const b=document.querySelector('.bubble').getBoundingClientRect(),c=document.querySelector('canvas').getBoundingClientRect();return {size:${size},gap:c.top-b.bottom,top:b.top,bottom:b.bottom,canvasTop:c.top};})()`,
+        ),
+      );
+    }
+    checks.push({
+      name: "bubble-stays-above-pet-at-all-scales",
+      ok: bubbleLayouts.every((r) => r.gap >= 15 && r.top >= 0),
+      detail: bubbleLayouts,
+    });
+    await pet!.webContents.executeJavaScript(
+      "window.naiwa.settings({size:140})",
+    );
+    await wait(120);
+    writeFileSync(
+      join(qa, "bubble-layout.png"),
+      (await pet!.webContents.capturePage()).toPNG(),
+    );
+    await pet!.webContents.executeJavaScript(
+      `document.querySelector('.bubble').classList.add('hidden');window.naiwa.settings({size:80});`,
+    );
+    await wait(120);
     const canvas = await pet!.webContents.executeJavaScript(
       `(()=>{const c=document.querySelector('canvas');if(!c)return null;const r=c.getBoundingClientRect();return {action:c.dataset.action,width:c.width,height:c.height,x:r.x,y:r.y,w:r.width,h:r.height}})()`,
     );
@@ -669,7 +699,7 @@ async function smokeTest() {
       },
       {
         x: desktop.x + desktop.width - Math.round(originalBounds.width / 2),
-        y: desktop.y + desktop.height - 120,
+        y: desktop.y + desktop.height - (originalBounds.height - 38) + 20,
       },
     ]) {
       pet!.setPosition(point.x, point.y);

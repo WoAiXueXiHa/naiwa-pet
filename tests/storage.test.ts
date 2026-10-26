@@ -30,7 +30,11 @@ test("corrupt settings preserved; invalid fields rejected; atomic roundtrip", ()
     assert.equal(state.settings.x, undefined);
     assert.deepEqual(state.seen, { x: true });
     saveState(file, state);
-    assert.deepEqual(JSON.parse(readFileSync(file, "utf8")), state);
+    assert.deepEqual(JSON.parse(readFileSync(file, "utf8")), {
+      ...state,
+      windowLayoutVersion: 2,
+    });
+    assert.deepEqual(loadState(file), state);
     assert.throws(() =>
       saveState(join(dir, "missing", "settings.json"), state),
     );
@@ -43,4 +47,22 @@ test("diagnostics hide personal identifiers", () => {
   const value = redact(String.raw`person@example.org C:\Users\private\file`);
   assert.ok(!value.includes("example.org"));
   assert.ok(!value.includes("private"));
+});
+
+test("bubble space migration preserves pet position and is only applied once", () => {
+  const dir = mkdtempSync(join(tmpdir(), "naiwa-layout-"));
+  try {
+    const file = join(dir, "settings.json");
+    writeFileSync(
+      file,
+      JSON.stringify({ settings: { size: 80, x: 100, y: 200 } }),
+    );
+    const state = loadState(file);
+    assert.equal(state.settings.x, 45);
+    assert.equal(state.settings.y, 28);
+    saveState(file, state);
+    assert.deepEqual(loadState(file), state);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });

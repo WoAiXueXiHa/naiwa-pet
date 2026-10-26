@@ -7,6 +7,7 @@ import {
 } from "node:fs";
 import { DEFAULT_SETTINGS, sanitizeSettings } from "./rules";
 import type { Settings } from "./types";
+import { petWindowSize } from "./windows";
 export interface StoredState {
   settings: Settings;
   seen: Record<string, boolean>;
@@ -39,6 +40,15 @@ export function loadState(path: string): StoredState {
       raw.settings.pausedUntil <= 8640000000000000
     )
       settings.pausedUntil = raw.settings.pausedUntil;
+    // Grow the transparent space above the pet while preserving its screen position.
+    if (raw.windowLayoutVersion !== 2) {
+      const width = petWindowSize(settings.size).width;
+      if (settings.x !== undefined)
+        settings.x -= Math.round(
+          (width - Math.max(150, Math.round(settings.size * 1.4))) / 2,
+        );
+      if (settings.y !== undefined) settings.y -= 172;
+    }
     const seen = Object.fromEntries(
       Object.entries(raw.seen && typeof raw.seen === "object" ? raw.seen : {})
         .filter(([k, v]) => k.length < 512 && v === true)
@@ -62,9 +72,13 @@ export function loadState(path: string): StoredState {
 }
 export function saveState(path: string, state: StoredState): void {
   const temp = path + ".tmp";
-  writeFileSync(temp, JSON.stringify(state, null, 2), {
-    encoding: "utf8",
-    mode: 0o600,
-  });
+  writeFileSync(
+    temp,
+    JSON.stringify({ ...state, windowLayoutVersion: 2 }, null, 2),
+    {
+      encoding: "utf8",
+      mode: 0o600,
+    },
+  );
   renameSync(temp, path);
 }
