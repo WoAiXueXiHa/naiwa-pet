@@ -36,6 +36,7 @@ try {
     if (-not $acquired) { return }
     $lastSession = ''
     while ($true) {
+      try {
         $session = Get-CodexDesktopSession
         if ($session -and $session -ne $lastSession) {
             $existing = Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $PetExecutable }
@@ -50,6 +51,9 @@ try {
             }
         }
         $lastSession = $session
+      } catch {
+        # Process enumeration can race with app exit; retry instead of losing the watcher.
+      }
         Start-Sleep -Seconds $PollSeconds
     }
 } finally {
