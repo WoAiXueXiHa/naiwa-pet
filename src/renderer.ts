@@ -165,9 +165,11 @@ function updateBadge() {
   const prefix = state.settings.size < 120 ? "额度" : "Codex 剩余";
   badge.textContent = valid.length
     ? `${prefix} ${Math.round(Math.min(...valid.map((w) => w.remaining!)))}%${state.quota.connected ? "" : " · 未更新"}`
-    : state.quota.error
-      ? "额度未连接"
-      : "正在读取额度…";
+    : !state.quota.clientRunning
+      ? "等待 Codex"
+      : state.quota.error
+        ? "额度未连接"
+        : "正在读取额度…";
 }
 async function bootPet() {
   await mountPet(root, api, () => state, updateBadge);

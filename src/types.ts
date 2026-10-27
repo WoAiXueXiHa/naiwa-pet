@@ -18,6 +18,7 @@ export interface QuotaWindow {
   resetsAt: number | null;
 }
 export interface QuotaState {
+  clientRunning: boolean;
   windows: QuotaWindow[];
   account: string;
   accountId: string;

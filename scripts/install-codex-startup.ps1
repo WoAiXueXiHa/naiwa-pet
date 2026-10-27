@@ -29,5 +29,5 @@ $settings = New-ScheduledTaskSettingsSet -Hidden -AllowStartIfOnBatteries -DontS
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger @($trigger,$recoveryTrigger) -Principal $principal -Settings $settings -Force | Out-Null
 if (Test-Path -LiteralPath $shortcutPath) { Remove-Item -LiteralPath $shortcutPath }
 Start-ScheduledTask -TaskName $taskName
-Write-Output 'Codex-linked scheduled task installed and started for the current Windows user.'
+Write-Output 'Login pet startup installed. Quota connects when the Codex desktop app opens.'
 return

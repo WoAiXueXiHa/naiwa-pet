@@ -34,23 +34,22 @@ try {
     try { $acquired = $mutex.WaitOne(0) }
     catch [System.Threading.AbandonedMutexException] { $acquired = $true }
     if (-not $acquired) { return }
-    $lastSession = ''
+    $petStarted = $false
     while ($true) {
       try {
-        $session = Get-CodexDesktopSession
-        if ($session -and $session -ne $lastSession) {
+        if (-not $petStarted) {
             $existing = Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $PetExecutable }
             if (-not $existing) {
                 try {
                     Start-Process -FilePath $PetExecutable -WorkingDirectory (Split-Path -Parent $PetExecutable) -WindowStyle Hidden
                 } catch {
-                    # Retry while Codex remains open, without logging personal paths.
+                    # Retry pet startup without depending on the Codex client.
                     Start-Sleep -Seconds $PollSeconds
                     continue
                 }
             }
         }
-        $lastSession = $session
+        $petStarted = $true
       } catch {
         # Process enumeration can race with app exit; retry instead of losing the watcher.
       }

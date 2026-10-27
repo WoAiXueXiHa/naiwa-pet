@@ -1,3 +1,4 @@
+import { DesktopMonitor } from "./desktop-monitor";
 import { Scheduler } from "./scheduler";
 import { spriteVisible, resizedBounds, petWindowSize } from "./windows";
 import { loadState, saveState } from "./storage";
@@ -37,6 +38,7 @@ let pet: BrowserWindow | null = null,
   tray: Tray | null = null;
 let settings: Settings = { ...DEFAULT_SETTINGS };
 let quota: QuotaState = {
+  clientRunning: false,
   windows: [],
   account: "尚未连接",
   accountId: "",
@@ -56,6 +58,35 @@ let storePath = "",
   dragTimer: ReturnType<typeof setInterval> | null = null,
   dragging = false;
 const codex = new CodexClient();
+let qaSession = "qa-client";
+const desktopMonitor = new DesktopMonitor(
+  process.argv.includes("--smoke-test") &&
+  !process.argv.includes("--live-quota")
+    ? async () => qaSession
+    : undefined,
+);
+let pendingClientRefresh = false;
+desktopMonitor.on("change", (session: string) => {
+  quota.clientRunning = !!session;
+  if (!session) {
+    codex.stop();
+    quota.connected = false;
+    quota.error = quota.updatedAt
+      ? "Codex 客户端已关闭，上次额度未更新。"
+      : "等待 Codex 客户端启动。";
+    broadcast();
+  } else {
+    if (busy) pendingClientRefresh = true;
+    else void refresh(true);
+  }
+});
+desktopMonitor.on("probe-failed", () => {
+  if (desktopMonitor.session === null) {
+    quota.error = "暂时无法检测 Codex 客户端，请稍后刷新。";
+    broadcast();
+  }
+});
+
 // Small raster sprites do not need GPU acceleration; avoid driver-dependent
 // transparent-window crashes on this Windows machine.
 app.disableHardwareAcceleration();
@@ -154,8 +185,12 @@ async function refresh(manual = false) {
   if (busy) return;
   if (!manual && !quotaHours(Date.now())) return;
   busy = true;
+  pendingClientRefresh = false;
   lastCheck = Date.now();
   try {
+    await desktopMonitor.check();
+    if (!desktopMonitor.session) return;
+    const clientSession = desktopMonitor.session;
     const mock =
       process.argv.includes("--smoke-test") &&
       !process.argv.includes("--live-quota");
@@ -163,6 +198,7 @@ async function refresh(manual = false) {
     const { account } = mock
       ? { account: { type: "chatgpt", id: "qa-mock" } }
       : await codex.account();
+    if (desktopMonitor.session !== clientSession) return;
     if (!account)
       throw new Error(
         "尚未登录，请在 Codex 客户端中登录 ChatGPT 账号，再点击刷新额度。",
@@ -185,20 +221,21 @@ async function refresh(manual = false) {
     if (quota.accountId && quota.accountId !== identity) quota.windows = [];
     quota.account = masked;
     quota.accountId = identity;
-    applyQuota(
-      mock
-        ? {
-            rateLimits: {
-              primary: {
-                usedPercent: 25,
-                windowDurationMins: 300,
-                resetsAt: Math.floor(Date.now() / 1000) + 3600,
-              },
+    const raw = mock
+      ? {
+          rateLimits: {
+            primary: {
+              usedPercent: 25,
+              windowDurationMins: 300,
+              resetsAt: Math.floor(Date.now() / 1000) + 3600,
             },
-          }
-        : await codex.read(),
-    );
+          },
+        }
+      : await codex.read();
+    if (desktopMonitor.session !== clientSession) return;
+    applyQuota(raw);
   } catch (e) {
+    if (!quota.clientRunning) return;
     quota.error = e instanceof Error ? redact(e.message) : "额度读取失败";
     quota.connected = false;
     failures++;
@@ -214,6 +251,7 @@ async function refresh(manual = false) {
       );
   } finally {
     busy = false;
+    if (pendingClientRefresh && quota.clientRunning) void refresh(true);
   }
 }
 function fitPosition() {
@@ -544,12 +582,13 @@ else {
     });
     scheduler.start();
     app.once("before-quit", () => scheduler.stop());
-    void refresh();
+    desktopMonitor.start();
     if (process.argv.includes("--smoke-test")) {
       setTimeout(() => void smokeTest(), 5000);
     }
   });
   app.on("before-quit", () => {
+    desktopMonitor.stop();
     closing = true;
     stopDrag();
     save();
@@ -565,6 +604,30 @@ async function smokeTest() {
   const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
   const checks: { name: string; ok: boolean; detail?: any }[] = [];
   try {
+    if (!process.argv.includes("--live-quota")) {
+      const previousUpdate = quota.updatedAt;
+      qaSession = "";
+      await desktopMonitor.check();
+      await refresh(true);
+      checks.push({
+        name: "closed-client-keeps-pet-and-stops-quota",
+        ok:
+          !quota.clientRunning &&
+          !quota.connected &&
+          codex.child === null &&
+          quota.updatedAt === previousUpdate &&
+          !!pet &&
+          !pet.isDestroyed(),
+      });
+      qaSession = "qa-reopened";
+      await desktopMonitor.check();
+      const deadline = Date.now() + 2000;
+      while (busy && Date.now() < deadline) await wait(20);
+      checks.push({
+        name: "opening-client-auto-connects-quota",
+        ok: quota.clientRunning && quota.connected && quota.windows.length > 0,
+      });
+    }
     const bubbleLayouts: any[] = [];
     for (const size of [40, 80, 160, 360]) {
       await pet!.webContents.executeJavaScript(
